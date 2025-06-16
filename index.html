@@ -3,115 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Elevar - Engenharia Integrada</title>
+    <title>Grupo Elevar - Engenharia Industrial</title>
     <style>
-        body {
+        :root {
+            --primary: #000000;
+            --secondary: #C0C0C0;
+            --light: #FFFFFF;
+        }
+        
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #ccc;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
         header {
-            background-color: #111;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
             text-align: center;
-            padding: 20px 10px;
+            color: var(--light);
         }
-        header img {
-            max-width: 200px;
-        }
-        h1, h2 {
-            color: #aaa;
-        }
-        section {
-            padding: 30px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .services, .fabrication {
-            background-color: #1a1a1a;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        ul {
-            list-style: square;
-            padding-left: 20px;
-        }
-        .service-item {
+        
+        .hero-content h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
-        .service-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin-top: 8px;
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        footer {
-            background-color: #111;
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
             text-align: center;
-            color: #888;
-            padding: 20px 10px;
+            margin-bottom: 50px;
+            position: relative;
         }
-        @media (max-width: 600px) {
-            section, footer {
-                padding: 15px;
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--secondary);
+            margin: 40px 0;
+            opacity: 0.5;
+        }
+        
+        /* Services */
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .service-card ul {
+            list-style-position: inside;
+            margin-top: 15px;
+        }
+        
+        .service-card li {
+            margin-bottom: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-        <img src="imagens/logo-grupo-elevar.png" alt="Logo Grupo Elevar">
-        <h1>GRUPO ELEVAR</h1>
-        <p>Engenharia Integrada</p>
+        <div class="container header-content">
+            <div class="logo">GRUPO <span>ELEVAR</span></div>
+        </div>
     </header>
-
-    <section>
-        <h2>Sobre a Empresa</h2>
-        <p>O GRUPO ELEVAR atua no setor de engenharia industrial, com foco especial em projetos elétricos, mecânicos e montagens em geral.</p>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1>Engenharia Industrial</h1>
+                <p>Soluções integradas em projetos elétricos, mecânicos e montagens industriais</p>
+            </div>
+        </div>
     </section>
-
-    <section class="services">
-        <h2>Nossos Serviços</h2>
-
-        <div class="service-item">
-            <h3>Instalações e Projetos Elétricos</h3>
-            <img src="imagens/servico-eletrico.jpg" alt="Projetos Elétricos">
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre a Empresa</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O <strong>GRUPO ELEVAR</strong> atua no setor de engenharia industrial, com foco especial em projetos elétricos, mecânicos e montagens em geral.</p>
+                    <p>Nossa equipe altamente qualificada está comprometida em oferecer soluções personalizadas e de alta qualidade para atender às necessidades específicas de cada cliente.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="service-item">
-            <h3>Montagens Industriais e Manutenção de Válvulas</h3>
-            <img src="imagens/montagem-valvula.jpg" alt="Montagem de Válvula">
-        </div>
-
-        <div class="service-item">
-            <h3>Soldagem Industrial</h3>
-            <img src="imagens/soldagem.jpg" alt="Serviço de Soldagem">
-        </div>
-
-        <div class="service-item">
-            <h3>Inspeção NR13</h3>
-            <img src="imagens/inspecao-nr13.jpg" alt="Inspeção NR13">
-        </div>
-
     </section>
-
-    <section class="fabrication">
-        <h2>Fabricação e Industrialização</h2>
-        <ul>
-            <li>Painéis Elétricos</li>
-            <li>Purgadores</li>
-            <li>Válvulas em geral (esfera, solenoide, segurança, etc.)</li>
-        </ul>
+    
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Serviços Industriais</h3>
+                    <ul>
+                        <li>Instalações e Projetos Elétricos</li>
+                        <li>Instalação e Manutenção de Sistema SPDA</li>
+                        <li>Instalação e Manutenção em Dutos de Ventilação</li>
+                        <li>Montagens Industriais</li>
+                        <li>Isolamento Térmico</li>
+                        <li>Manutenção em Válvulas</li>
+                        <li>Inspeção NR13</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Comercialização</h3>
+                    <ul>
+                        <li>Painéis Elétricos</li>
+                        <li>Purgadores</li>
+                        <li>Válvulas em geral (esfera, solenoide, segurança, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-
+    
+    <!-- Footer -->
     <footer>
-        <h2>Contato</h2>
-        <p>📍 Endereço: Rua Riachuelo, 405 – Centro – Rio de Janeiro/RJ</p>
-        <p>📞 Telefone: (21) 99966-5719</p>
-        <p>✉️ E-mail: comercialgrupoelevar@hotmail.com</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contatos</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Rua Riachuelo, 405 – Centro – Rio de Janeiro/RJ</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📞</span>
+                            <span>(21) 99966-5719</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>✉️</span>
+                            <span>comercialgrupoelevar@hotmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 GRUPO ELEVAR. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>
