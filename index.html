@@ -272,7 +272,64 @@
     width: 180px;
     height: auto;
     margin-bottom: 20px;
+	align-items: center;
     }
+	
+	@media (min-width: 1024px) {
+    /* Centralizar e alinhar hero content melhor em desktop */
+    .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Aumentar espaço entre colunas no about */
+    .about-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .about-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    /* Melhorar aparência do título da seção com a logo */
+    .section-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title .hero-logo {
+        width: 200px;
+    }
+
+    /* Footer mais espaçado */
+    .footer-content {
+        gap: 80px;
+    }
+
+    .service-card {
+        padding: 40px;
+    }
+
+    .services-grid {
+        gap: 40px;
+    }
+
+    header .logo {
+        font-size: 32px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+}
+
 
 
     </style>
@@ -290,7 +347,6 @@
     <section class="hero">
     <div class="container hero-content">
         <div>
-            <img src="https://i.postimg.cc/5yj1CzPB/logo.png" alt="Logo Grupo Elevar" class="hero-logo">
             <h1>ENGENHARIA INDUSTRIAL</h1>
             <p>Soluções integradas em projetos elétricos, mecânicos e montagens industriais</p>
         </div>
@@ -302,6 +358,7 @@
     <section id="about">
         <div class="container">
             <div class="section-title">
+			 <img src="https://i.postimg.cc/5yj1CzPB/logo.png" alt="Logo Grupo Elevar" class="hero-logo">
                 <h2>Sobre a Empresa</h2>
             </div>
             
