@@ -40,7 +40,7 @@ O **GRUPO ELEVAR** atua no setor de engenharia industrial, com foco especial em 
 
 ## 🌐 Link do site no GitHub Pages:
 
-👉 [Acessar o site](https://github.com/valeriajf/grupo-elevar-site/)
+👉 [Acessar o site](https://valeriajf.github.io/grupo-elevar-site/)
 
 ---
 
